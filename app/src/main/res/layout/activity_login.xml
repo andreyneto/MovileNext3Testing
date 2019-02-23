@@ -54,7 +54,7 @@
             tools:ignore="HardcodedText"/>
 
     <TextView
-            android:id="@android:id/message"
+            android:id="@+id/tvNameSurname"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
