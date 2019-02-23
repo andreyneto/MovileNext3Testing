@@ -1,6 +1,11 @@
 package br.com.andreyneto.movilenext3testing
 
 import android.widget.TextView
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import junit.framework.Assert.assertEquals
@@ -22,4 +27,11 @@ class MainActivityTest {
 
         assertEquals("Hello World!", text)
     }
+    @Test
+    fun sendButton_shouldWriteHelloName() {
+        onView(withHint("Type your name")).perform(typeText("Paulo Salvatore"))
+        onView(withText("Send")).perform(click())
+        onView(withText("Hello, Paulo Salvatore!")).check(matches(isDisplayed()))
+    }
+
 }
