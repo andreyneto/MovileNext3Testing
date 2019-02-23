@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Movile Next 3 Testing</string>
+    <string name="login_fail">Login Fail</string>
 </resources>
